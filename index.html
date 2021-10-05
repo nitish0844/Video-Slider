@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HAPPY JOURNEYS | Travel</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="brand">Tourism</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Explore</a>
+          <a href="#">Gallery</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="home">
+      <video
+        class="video-slide active"
+        src="./videos/1.mp4"
+        autoplay
+        muted
+        loop
+      ></video>
+      <video
+        class="video-slide"
+        src="./videos/2.mp4"
+        autoplay
+        muted
+        loop
+      ></video>
+      <video
+        class="video-slide"
+        src="./videos/3.mp4"
+        autoplay
+        muted
+        loop
+      ></video>
+      <video
+        class="video-slide"
+        src="./videos/4.mp4"
+        autoplay
+        muted
+        loop
+      ></video>
+      <video
+        class="video-slide"
+        src="./videos/5.mp4"
+        autoplay
+        muted
+        loop
+      ></video>
+      <div class="content active">
+        <h1>Hill<br />Stations</h1>
+        <p>
+          The great thing about reaching the top of the mountain is realising
+          that there’s space for more than one person. And you’re now in the
+          prime position to help others up.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Water Falls <br />makes you dive.</h1>
+        <p>
+          There is a hidden message in every waterfall. It says, if you are
+          flexible, falling will not hurt you.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Adventures<br />Off Road.</h1>
+        <p>
+          A road trip is a way for the whole family to spend time together and
+          annoy each other in interesting and new places.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Forest Trip<br />Together.</h1>
+        <p>
+          In some mysterious way woods have never seemed to me to be static
+          things. In physical terms, I move through them; yet in metaphysical
+          ones, they seem to move through me.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Ocean Relaxing</h1>
+        <p>
+          We ourselves feel what we are doing is just a drop in the ocean. But
+          the ocean would be less because of that missing drop.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="media-icons">
+        <a href="https://www.facebook.com" target="blank"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="https://www.instagram.com" target="blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="https://www.twitter.com" target="blank"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a href="https://www.linkedin.com" target="blank"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+      </div>
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+      //Javacript for responsive navigation menu
+      const menuBtn = document.querySelector(".menu-btn");
+      const navigation = document.querySelector(".navigation");
+
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+      });
+
+      //Javacript for video slider navigation
+      const btns = document.querySelectorAll(".nav-btn");
+      const slides = document.querySelectorAll(".video-slide");
+      const contents = document.querySelectorAll(".content");
+
+      var sliderNav = function (manual) {
+        btns.forEach((btn) => {
+          btn.classList.remove("active");
+        });
+
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+
+        contents.forEach((content) => {
+          content.classList.remove("active");
+        });
+
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+      };
+
+      btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          sliderNav(i);
+        });
+      });
+    </script>
+  </body>
+</html>
